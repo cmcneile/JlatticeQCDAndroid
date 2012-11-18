@@ -1,0 +1,6 @@
+This is the start of a lattice qcd code that will run as an
+android app.
+
+The basic aim at the moment is to generate some
+configurations and plot the plaquette.
+
