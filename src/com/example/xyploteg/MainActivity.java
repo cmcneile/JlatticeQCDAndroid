@@ -48,19 +48,20 @@ public class MainActivity extends Activity
 	int N = 2 ; 
         double beta = 2.1 ;
         int sweeps_between_meas = 5 ; 
-        int max_sweeps = 5 ; 
+        int max_sweeps = 50 ; 
 
-        double[] x    = new double[sweeps_between_meas] ;
-        double[] plaq = new double[sweeps_between_meas] ;
+        double[] x    = new double[max_sweeps] ;
+        double[] plaq = new double[max_sweeps] ;
         generate_gauge.create_configs(N,beta,sweeps_between_meas, max_sweeps,x,plaq ) ;
 
         // Create a couple arrays of y-values to plot:
-        Number[] series1Numbers = new Number[sweeps_between_meas] ;
-        Number[] series2Numbers = new Number[sweeps_between_meas] ;
+        Number[] series1Numbers = new Number[max_sweeps] ;
+        Number[] series2Numbers = new Number[max_sweeps] ;
 
-	for(int ip = 0 ; ip < sweeps_between_meas ; ++ip)
+	for(int ip = 0 ; ip < max_sweeps ; ++ip)
 	    {
-		series1Numbers[ip] = new Double(x[ip]) ;
+		//		series1Numbers[ip] = new Double(x[ip]) ;
+		series1Numbers[ip] = new Double(ip) ;
 		series2Numbers[ip] = new Double(plaq[ip]) ;
 	    }
 
@@ -70,7 +71,7 @@ public class MainActivity extends Activity
         XYSeries series1 = new SimpleXYSeries(
                 Arrays.asList(series1Numbers),          // SimpleXYSeries takes a List so turn our array into a List
                 SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, // Y_VALS_ONLY means use the element index as the x value
-                "Series1");                             // Set the display title of the series
+                "Trajectory");                             // Set the display title of the series
 
         // same as above
         XYSeries series2 = new SimpleXYSeries(Arrays.asList(series2Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Plaquette");

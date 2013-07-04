@@ -2,12 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.example.xyploteg"
       android:versionCode="1"
+      android:installLocation="preferExternal"
       android:versionName="1.0">
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="15"
         />
-    <application android:label="Quickstart"
+    <application android:label="LQCD"
                  android:icon="@drawable/ic_launcher"
                  android:hardwareAccelerated="false">
         <activity android:name=".MainActivity"
@@ -17,6 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>        
+<activity
+      android:name=".parameters"
+      android:label="@string/app_name" />
     </application>
 </manifest>
 
