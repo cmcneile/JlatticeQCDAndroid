@@ -11,7 +11,7 @@
     <application android:label="LQCD"
                  android:icon="@drawable/ic_launcher"
                  android:hardwareAccelerated="false">
-        <activity android:name=".MainActivity"
+        <activity android:name=".Parameters"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>        
 <activity
-      android:name=".parameters"
+      android:name=".RunLQCD"
       android:label="@string/app_name" />
     </application>
 </manifest>
