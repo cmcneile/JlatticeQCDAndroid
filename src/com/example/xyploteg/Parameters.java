@@ -24,8 +24,12 @@ public class Parameters extends Activity {
     TextView XXXQuestionTextView;
     TextView TTTQuestionTextView;
 
+    TextView BETAQuestionTextView;
+
     private String xxxdim   ;    
     private String tttdim   ;    
+
+    private String beta   ;    
 
     int mCurrentIndex = 0;
 
@@ -57,6 +61,13 @@ public class Parameters extends Activity {
 	TTTQuestionTextView.setText(tdim);
 
 
+        BETAQuestionTextView = (TextView)findViewById(R.id.beta_view);
+	beta = "3.2"  ;
+	String betadim = "beta = " + beta  ;
+	BETAQuestionTextView.setText(betadim);
+
+
+
 	//
 	//  Run simulation
 	//
@@ -74,9 +85,17 @@ public class Parameters extends Activity {
 		EditText editText = (EditText) findViewById(R.id.XXX_edit_message);
 		xxxdim = editText.getText().toString();
 
+		EditText ttt_editText = (EditText) findViewById(R.id.TTT_edit_message);
+		tttdim = ttt_editText.getText().toString();
+
+		EditText beta_editText = (EditText) findViewById(R.id.beta_edit_message);
+		beta = beta_editText.getText().toString();
+
 
 		i.putExtra("Xdim", xxxdim);
 		i.putExtra("Tdim", tttdim);
+		i.putExtra("beta", beta);
+
                 startActivityForResult(i, 0);
             }
         });
