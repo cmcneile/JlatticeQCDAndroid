@@ -34,12 +34,23 @@ public class RunLQCD extends Activity
 
     private XYPlot mySimpleXYPlot;
 
+    private String nx ;
+    private String nt ;
+    private String beta ;
+
+
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+	nx   = getIntent().getStringExtra("Xdim");
+        nt   = getIntent().getStringExtra("Tdim");
+        beta = getIntent().getStringExtra("beta");
+
 
         // initialize our XYPlot reference:
         mySimpleXYPlot = (XYPlot) findViewById(R.id.mySimpleXYPlot);
