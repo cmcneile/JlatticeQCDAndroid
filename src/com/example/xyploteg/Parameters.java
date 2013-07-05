@@ -11,14 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.EditText;
 
-public class QuizActivity extends Activity {
+public class Parameters extends Activity {
 
     private static final String TAG = "QuizActivity";
     private static final String KEY_INDEX = "index";
 
     Button mCheatButton;
 
-    boolean mIsCheater;
 
     TextView mQuestionTextView;
 
@@ -31,23 +30,12 @@ public class QuizActivity extends Activity {
     int mCurrentIndex = 0;
 
     
-    private void checkAnswer() {
-
-
-        int messageResId = 0;
-        
-	messageResId = R.string.judgment_toast;
-        Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
-            .show();
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate() called");
-        setContentView(R.layout.activity_quiz);
+        setContentView(R.layout.parameters);
 
-        mIsCheater = false;
 
         mQuestionTextView = (TextView)findViewById(R.id.question_text_view);
 	String hello = "Parameters of simulation"  ;
@@ -69,12 +57,6 @@ public class QuizActivity extends Activity {
 	TTTQuestionTextView.setText(tdim);
 
 
-	//	XXXQuestionTextView.setText(message);
-
-
-
-	//	checkAnswer() ;
-
 	//
 	//  Run simulation
 	//
@@ -84,7 +66,8 @@ public class QuizActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "cheat button clicked");
-                Intent i = new Intent(QuizActivity.this, CheatActivity.class);
+		// need to rename MainActivity.java
+                Intent i = new Intent(Parameters.this, RunLQCD.class);
                 Log.d(TAG, "intent created");
 
 
@@ -103,7 +86,7 @@ public class QuizActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        mIsCheater = data.getBooleanExtra(CheatActivity.EXTRA_ANSWER_SHOWN, false);
+	//        mIsCheater = data.getBooleanExtra(CheatActivity.EXTRA_ANSWER_SHOWN, false);
     }
 
     @Override

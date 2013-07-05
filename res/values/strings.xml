@@ -2,4 +2,8 @@
 <resources>
     <string name="app_name">Quenched QCD</string>
     <string name="menu_settings">Settings</string>
+
+<string name="edit_message">4</string>
+<string name="cheat_button">Start!</string>
+
 </resources>
